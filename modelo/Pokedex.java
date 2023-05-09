@@ -365,6 +365,7 @@ public class Pokedex {
 		int longitud = miPokedex.size();
 		boolean encontrado = false;
 		int contador = 0;
+		String sqlDelete=("");
 
 		try {
 			if (miPokedex.isEmpty()) {
@@ -373,8 +374,10 @@ public class Pokedex {
 				do {
 					if (miPokedex.get(contador).getNombre().equals(nombre)) {
 						System.out.println("El Pokèmon " + nombre + " ha sido liberado. ¡Buena suerte " + nombre + "!");
-						System.out.println("-----------------------------------------------");
 						encontrado = true;
+						sqlDelete = TransformarAsql.LiberaPokemonAsql(nombre);
+						InsertDelUpdate.ejecutarSql(sqlDelete);
+						System.out.println("-----------------------------------------------");
 						miPokedex.remove(contador);
 					}
 					contador++;

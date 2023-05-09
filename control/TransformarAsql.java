@@ -17,7 +17,7 @@ public class TransformarAsql {
 	}
 
 	public static String UpdatePokemonAsql(Pokemon miPokemon, String antiguo) {
-		// recibe un Objeto de la clase miPokemon y devuelve un String de modificacion
+		// recibe un Objeto de la clase miPokemon y el nombre del pokemon a modificar y devuelve un String de modificacion
 		/*
 		 * UPDATE registrados SET nombre = 'bulbasaur', tipo= 'planta', region='kanto'
 		 * WHERE nombre='charmander';
@@ -26,5 +26,14 @@ public class TransformarAsql {
 		return "UPDATE registrados SET nombre = '" + miPokemon.getNombre() + "', tipo='" + miPokemon.getTipo() + "', region='"
 				+ miPokemon.getRegion() + "' WHERE nombre='"+ antiguo +"';";
 	}
+	public static String LiberaPokemonAsql(String antiguo) {
+		// recibe el nombre del pokemon a liberar y devuelve un String de eliminacion
+		/*
+		 * DELETE FROM registrados WHERE nombre='bulbasaur'
+		 */
+
+		return "DELETE FROM registrados WHERE nombre='"+ antiguo +"';";
+	}
+
 
 }
