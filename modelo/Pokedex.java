@@ -2,6 +2,7 @@ package modelo;
 
 import java.util.ArrayList;
 
+import baseDeDatos.Consultar;
 import baseDeDatos.InsertDelUpdate;
 import control.TransformarAsql;
 import modelo.Pokemon;
@@ -148,6 +149,7 @@ public class Pokedex {
 		int longitud = miPokedex.size();
 		boolean encontrado = false;
 		int contador = 0;
+		String sql=("");
 
 		try {
 			if (miPokedex.isEmpty()) {
@@ -159,6 +161,7 @@ public class Pokedex {
 								+ miPokedex.get(contador).getTipo() + " y pertenece a la región de "
 								+ miPokedex.get(contador).getRegion());
 						encontrado = true;
+
 					}
 					contador++;
 					if (contador == longitud && !encontrado) {
@@ -191,6 +194,7 @@ public class Pokedex {
 		String tipo = consultaTipo.getTipo();
 		int longitud = miPokedex.size();
 		boolean encontrado = false;
+		//String sql=("");
 
 		System.out.println("Tienes los siguientes Pokèmon del tipo " + tipo + " en tu Pokèdex:");
 		
@@ -200,6 +204,7 @@ public class Pokedex {
 					System.out.println("Pokèmon: " + miPokedex.get(i).getNombre() + ", Tipo: " + miPokedex.get(i).getTipo()
 							+ ", Región: " + miPokedex.get(i).getRegion());
 					encontrado = true;
+
 				}
 			}
 		} catch (Exception e) {
@@ -232,6 +237,7 @@ public class Pokedex {
 		String region = consultaRegion.getRegion();
 		int longitud = miPokedex.size();
 		boolean encontrado = false;
+		String sql=("");
 
 		System.out.println("Tienes los siguientes Pokèmon de la región " + region + " en tu Pokèdex:");
 		try {
@@ -240,6 +246,8 @@ public class Pokedex {
 					System.out.println("Pokèmon: " + miPokedex.get(i).getNombre() + ", Tipo: " + miPokedex.get(i).getTipo()
 							+ ", Región: " + miPokedex.get(i).getRegion());
 					encontrado = true;
+					//sql = TransformarAsql.ConsultaRegionAsql(miPokemon.getRegion());
+					//Consultar.ConsultarSql(sql);
 				}
 			}
 		} catch (Exception e) {

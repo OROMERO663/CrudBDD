@@ -34,6 +34,42 @@ public class TransformarAsql {
 
 		return "DELETE FROM registrados WHERE nombre='"+ antiguo +"';";
 	}
+	public static String CountAsql() {
+		/*
+		 * "SELECT count(*) FROM registrados"
+		 */
+		return "SELECT count(*) FROM registrados";
+	}
+	public static String ConsultaTodoAsql() {
+		/*
+		 * SELECT * FROM registrados;
+		 */
+		System.out.println("Estos son los Pokèmon registrados en tu Pokèdex:");
+		return "SELECT * FROM registrados;";
+	}
+	public static String ConsultaNombreAsql(String nombre) {
+		/*
+		 * SELECT * FROM `registrados` WHERE nombre='charmander';
+		 */
+
+		return "SELECT * FROM registrados WHERE nombre='"+ nombre +"';";
+	}
+	public static String ConsultaTipoAsql(String tipo) {
+		/*
+		 * SELECT * FROM `registrados` WHERE nombre='charmander';
+		 */
+		System.out.println("Tienes los siguientes Pokèmon del tipo " + tipo + ":");
+
+		return "SELECT * FROM registrados WHERE tipo='"+ tipo +"';";
+	}
+	public static String ConsultaRegionAsql(String region) {
+		/*
+		 * SELECT * FROM `registrados` WHERE nombre='charmander';
+		 */
+		System.out.println("Tienes los siguientes Pokèmon de la región " + region + ":");
+
+		return "SELECT * FROM registrados WHERE tipo='"+ region +"';";
+	}
 
 
 }
