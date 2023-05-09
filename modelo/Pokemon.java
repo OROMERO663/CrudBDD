@@ -1,17 +1,17 @@
 package modelo;
 
 public class Pokemon {
-	
 
 	private String nombre;
 	private String tipo;
 	private String region;
+
 	/**
 	 * Metodo Constructor Pokemon
 	 * 
 	 * @author Oscar
 	 * @param nombre Atributo nombre del Pokemon
-	 * @param tipo Atributo tipo del Pokemon
+	 * @param tipo   Atributo tipo del Pokemon
 	 * @param region Atributo region del Pokemon
 	 */
 	public Pokemon(String nombre, String tipo, String region) {
@@ -20,6 +20,7 @@ public class Pokemon {
 		this.tipo = tipo;
 		this.region = region;
 	}
+
 	/**
 	 * Metodo Getter Nombre
 	 * 
@@ -29,6 +30,7 @@ public class Pokemon {
 	public String getNombre() {
 		return nombre;
 	}
+
 	/**
 	 * Metodo Setter Nombre
 	 * 
@@ -38,6 +40,7 @@ public class Pokemon {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
 	/**
 	 * Metodo Getter Tipo
 	 * 
@@ -47,6 +50,7 @@ public class Pokemon {
 	public String getTipo() {
 		return tipo;
 	}
+
 	/**
 	 * Metodo Setter Tipo
 	 * 
@@ -56,6 +60,7 @@ public class Pokemon {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
+
 	/**
 	 * Metodo Getter Region
 	 * 
@@ -65,6 +70,7 @@ public class Pokemon {
 	public String getRegion() {
 		return region;
 	}
+
 	/**
 	 * Metodo Setter Region
 	 * 
@@ -74,6 +80,7 @@ public class Pokemon {
 	public void setRegion(String region) {
 		this.region = region;
 	}
+
 	/**
 	 * Metodo toString Pokemon
 	 * 
