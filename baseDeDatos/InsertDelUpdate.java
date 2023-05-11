@@ -4,14 +4,25 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+/**
+ * Clase InsertDelUpdate. Contiene el metodo que permite lanzar una sentencia sql, del tipo INSERT/DELETE/UPDATE.
+ * 
+ * @author Oscar
+ * @version 1
+ */
 public class InsertDelUpdate {
-
+	/**
+	 * El metodo ejecutarSql recibe una sentencia sql de insercion, conecta con la base de datos y la ejecuta.
+	 * Se usa como herramienta para insertar, modificar o eliminar un Pokemon de la base de datos.
+	 * Sirve de soporte a los metodos que necesitan lanzar este tipo de sentencias contra la base de datos.
+	 * 
+	 * @author Oscar
+	 * @param sql Sentencia sql de insercion.
+	 */
 	public static void ejecutarSql(String sql) {
 
 		Connection conexion = null;
 		Statement sentenciaSQL = null;
-		int resultado = 0;
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -19,10 +30,7 @@ public class InsertDelUpdate {
 
 			sentenciaSQL = conexion.createStatement();
 
-			resultado = sentenciaSQL.executeUpdate(sql);
-/*
-			if (resultado >= 1) {
-			}*/
+			sentenciaSQL.executeUpdate(sql);
 
 		} catch (SQLException ex) {
 			ex.printStackTrace();

@@ -1,5 +1,11 @@
 package modelo;
-
+/**
+ * Clase Pokemon. Contiene los atributos que forman el Objeto Pokemon y los metodos necesarios (Constructor, Getters/Setters) 
+ * para poder ser utilizado por el resto de Clases.
+ * 
+ * @author Oscar
+ * @version 1
+ */
 public class Pokemon {
 
 	private String nombre;
